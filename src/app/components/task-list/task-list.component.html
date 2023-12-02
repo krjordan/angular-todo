@@ -1,0 +1,13 @@
+<div class="task-list">
+  <ul>
+    <li *ngFor="let task of tasks">
+      <span [class.completed]="task.completed">{{ task.title }}</span>
+      <div class="btn-container">
+        <button (click)="toggleCompletion(task.id)">
+          {{ task.completed ? "Mark as Incomplete" : "Mark as Complete" }}
+        </button>
+        <button (click)="deleteTask(task.id)">Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>
